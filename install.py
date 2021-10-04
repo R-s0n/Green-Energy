@@ -21,7 +21,7 @@ else :
     cloning = subprocess.run(["sudo apt-get install -y nodejs npm"], stdout=subprocess.DEVNULL, shell=True)
     print("[+] NodeJS was successfully installed")
     node_check2 = subprocess.run(["node --version; npm --version"], stdout=subprocess.DEVNULL, stderr=subprocess.PIPE, shell=True)
-    if node_check2.returncode == 1:
+    if node_check2.returncode == 0:
         print("[+] NodeJS was successfully installed")
     else:
         print("[-] Something went wrong!  Check the stack trace, make any necessary adjustments, and try again.  Exiting...")
